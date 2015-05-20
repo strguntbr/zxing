@@ -439,7 +439,7 @@ public final class EncoderTest extends Assert {
     assertEquals("Unexpected symbol format (compact)", compact, aztec.isCompact());
     assertEquals("Unexpected nr. of layers", layers, aztec.getLayers());
     BitMatrix matrix = aztec.getMatrix();
-    assertEquals("encode() failed", expected, matrix.toString());
+    assertEquals("encode() failed", expected, matrix.toString().replace("\r", ""));
   }
 
   private static void testEncodeDecode(String data, boolean compact, int layers) throws Exception {
